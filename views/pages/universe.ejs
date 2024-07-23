@@ -1,0 +1,146 @@
+<!-- Document type declaration -->
+<!DOCTYPE html>
+<!-- Root element of the HTML document -->
+<html lang="en">
+<!-- Head section of the HTML document -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Title of the HTML document -->
+    <title>Create Universe and Group</title>
+<!-- Link to external resources -->
+    <link rel="stylesheet" href="styles/universe.css" />
+<!-- Head section of the HTML document -->
+</head>
+<!-- Body section of the HTML document -->
+<body>
+<!-- Division or section in the HTML document -->
+    <div class="container">
+        <!-- Container para criar um novo universo -->
+<!-- Division or section in the HTML document -->
+        <div class="create-universe-container">
+            <h1>Create a New Universe</h1>
+<!-- Form element for user input -->
+            <form id="createUniverseForm">
+<!-- Division or section in the HTML document -->
+                <div class="form-group">
+<!-- Label for form input elements -->
+                    <label for="universeName">Universe Name:</label>
+                    <!-- Ícone de universo -->
+                    <img src="/images/icone de universo.png" alt="Universe Icon">
+                    <!-- Campo de entrada para o nome do universo -->
+<!-- Input element for user data -->
+                    <input type="text" id="universeName" name="universeName" placeholder="Universe Name" required>
+<!-- Division or section in the HTML document -->
+                </div>
+                <!-- Botão para criar o universo -->
+<!-- Button element -->
+                <button type="submit">Create Universe</button>
+<!-- Form element for user input -->
+            </form>
+<!-- Division or section in the HTML document -->
+        </div>
+
+        <!-- Container para criar um novo grupo -->
+<!-- Division or section in the HTML document -->
+        <div class="create-group-container">
+            <h2>Create a New Group</h2>
+<!-- Form element for user input -->
+            <form id="createGroupForm">
+<!-- Division or section in the HTML document -->
+                <div class="form-group">
+<!-- Label for form input elements -->
+                    <label for="groupName">Group Name:</label>
+                    <!-- Ícone de grupo -->
+                    <img src="/images/icone de grupo.png" alt="Group Icon">
+                    <!-- Campo de entrada para o nome do grupo -->
+<!-- Input element for user data -->
+                    <input type="text" id="groupName" name="groupName" placeholder="Group Name" required>
+<!-- Division or section in the HTML document -->
+                </div>
+<!-- Division or section in the HTML document -->
+                <div class="form-group">
+<!-- Label for form input elements -->
+                    <label for="universeNameForGroup">Universe Name:</label>
+                    <!-- Ícone de universo -->
+                    <img src="/images/icone de universo.png" alt="Universe Icon">
+                    <!-- Campo de entrada para o nome do universo relacionado ao grupo -->
+<!-- Input element for user data -->
+                    <input type="text" id="universeNameForGroup" name="universeNameForGroup" placeholder="Universe Name" required>
+<!-- Division or section in the HTML document -->
+                </div>
+                <!-- Botão para criar o grupo -->
+<!-- Button element -->
+                <button type="submit">Create Group</button>
+<!-- Form element for user input -->
+            </form>
+<!-- Division or section in the HTML document -->
+        </div>
+<!-- Division or section in the HTML document -->
+    </div>
+
+<!-- Link to external script files -->
+    <script>
+// Commented line in script
+        // Manipulador de evento para o formulário de criação de universo
+        document.getElementById('createUniverseForm').addEventListener('submit', async function(event) {
+// Commented line in script
+            event.preventDefault(); // Previne o comportamento padrão do formulário
+            const universeName = document.getElementById('universeName').value;
+
+// Commented line in script
+            // Envia uma solicitação POST para criar o universo
+            const response = await fetch('/api/universe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name: universeName })
+            });
+
+            if (response.ok) {
+                const universe = await response.json();
+                alert('Universo criado com sucesso com o nome: ' + universe.name);
+// Commented line in script
+                // Define o nome do universo no formulário de criação de grupo
+                document.getElementById('universeNameForGroup').value = universe.name;
+                document.getElementById('createUniverseForm').reset();
+            } else {
+                alert('Falha ao criar o universo');
+            }
+        });
+
+// Commented line in script
+        // Manipulador de evento para o formulário de criação de grupo
+        document.getElementById('createGroupForm').addEventListener('submit', async function(event) {
+// Commented line in script
+            event.preventDefault(); // Previne o comportamento padrão do formulário
+            const groupName = document.getElementById('groupName').value;
+            const universeNameForGroup = document.getElementById('universeNameForGroup').value;
+
+            console.log('Enviando criação de grupo com os dados:', { name: groupName, universeName: universeNameForGroup });
+
+// Commented line in script
+            // Envia uma solicitação POST para criar o grupo
+            const response = await fetch('/api/group', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name: groupName, universeName: universeNameForGroup })
+            });
+
+            if (response.ok) {
+                alert('Grupo criado com sucesso!');
+                document.getElementById('createGroupForm').reset();
+            } else {
+                const errorData = await response.json();
+                alert('Falha ao criar o grupo: ' + (errorData.error || 'Erro desconhecido'));
+            }
+        });
+<!-- Link to external script files -->
+    </script>
+<!-- Body section of the HTML document -->
+</body>
+<!-- Root element of the HTML document -->
+</html>

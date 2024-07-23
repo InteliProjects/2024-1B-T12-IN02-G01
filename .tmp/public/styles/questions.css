@@ -1,0 +1,442 @@
+/* Setting font style, removing margin and padding, and setting background color */
+body {
+  font-family: Arial, sans-serif; /* Font family for the body text */
+  margin: 0; /* Removing default margin */
+  padding: 0; /* Removing default padding */
+  background-color: #f0f0f0; /* Background color for the body */
+}
+
+/* Container for the entire content */
+.container {
+  width: 100%; /* Full width */
+  max-width: 1139px; /* Maximum width */
+  margin: 0 auto; /* Centering container horizontally */
+  padding: 20px; /* Padding around the content */
+  position: absolute; /* Absolute positioning */
+  left: 3.5%; /* Position from the left */
+  top: 20%; /* Position from the top */
+}
+
+/* Style for the progress bar container */
+.progress-bar {
+  display: flex; /* Flex container */
+  align-items: center; /* Centering items vertically */
+  justify-content: space-between; /* Distributing items evenly */
+  margin-bottom: 20px; /* Space below the progress bar */
+}
+
+/* Style for span2 within progress bar */
+.progress-bar span2 {
+  font-size: 14px; /* Font size */
+  color: #555; /* Text color */
+  position: absolute; /* Absolute positioning */
+  top: -4.5%; /* Position from the top */
+  left: 22%; /* Position from the left */
+  font-weight: bolder; /* Bold text */
+}
+
+/* Style for span1 within progress bar */
+.progress-bar span1 {
+  font-size: 14px; /* Font size */
+  color: #555; /* Text color */
+  position: absolute; /* Absolute positioning */
+  top: 1.0%; /* Position from the top */
+  left: -1%; /* Position from the left */
+  font-weight: bold; /* Bold text */
+}
+
+/* Style for the progress bar */
+.progress {
+  width: 96%; /* Full width */
+  height: 10px; /* Height */
+  background-color: #ddd; /* Background color */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Hiding overflow */
+  position: absolute; /* Absolute positioning */
+  top: 1.5% /* Position from the top */
+}
+
+/* Style for the filled part of the progress bar */
+.progress::before {
+  content: ''; /* Empty content */
+  display: block; /* Block element */
+  height: 100%; /* Full height */
+  width: 16%; /* Width of the progress */
+  background-color: #3b82f6; /* Progress color */
+}
+
+/* Style for content container */
+.content {
+  background-color: #007EA7; /* Background color */
+  border-radius: 27px; /* Rounded corners */
+  padding: 40px; /* Padding around the content */
+  color: white; /* Text color */
+  border: 3px solid #007EA7; /* Border style */
+  top: 10%; /* Position from the top */
+}
+
+/* Style for heading within content */
+.content h2 {
+  margin-top: 0; /* Removing margin from the top */
+  font-size: 10px; /* Font size */
+  color: black; /* Text color */
+  top: 10% /* Position from the top */
+}
+
+/* Style for question container */
+.question {
+  background-color: #e0e0e0; /* Background color */
+  padding: 10px; /* Padding around the content */
+  border-radius: 4px; /* Rounded corners */
+  margin-bottom: 10px; /* Space below each question */
+}
+
+/* Style for paragraph within question */
+.question p {
+  margin: 0; /* Removing margin */
+  font-weight: bold; /* Bold text */
+  color: black; /* Text color */
+}
+
+/* Style for list within question */
+.question ul {
+  list-style: none; /* Removing list style */
+  padding: 0; /* Removing padding */
+}
+
+/* Style for list items within question */
+.question li {
+  margin: 5px 0; /* Margin around each list item */
+  color: black; /* Text color */
+}
+
+/* Style for selected list item within question */
+.question li.selected {
+  text-decoration: underline; /* Underline text */
+  font-weight: bold; /* Bold text */
+  color: #3b82f6; /* Text color */
+}
+
+/* Style for navigation container */
+.navigation {
+  display: flex; /* Flex container */
+  justify-content: space-between; /* Distributing items evenly */
+  margin-top: 20px; /* Space above navigation */
+}
+
+/* Style for buttons within navigation */
+.navigation button {
+  padding: 10px 20px; /* Padding around the button */
+  border: none; /* Removing border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #3b82f6; /* Background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Style for disabled buttons within navigation */
+.navigation button:disabled {
+  background-color: #aaa; /* Background color for disabled button */
+  cursor: not-allowed; /* Not-allowed cursor on hover */
+}
+
+/* Style for header element */
+header {
+  height: 60px; /* Setting header height */
+}
+
+/* Style for header container */
+.Headers {
+  height: 60px; /* Setting header container height */
+  background-color: #17255A; /* Setting background color */
+  display: flex; /* Flex container */
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: space-between; /* Distributing items evenly */
+  color: #FFFFFF; /* Setting text color */
+  align-self: center; /* Centering vertically */
+  padding: 10px; /* Adding padding */
+}
+
+/* Style for group color text */
+.GroupColor {
+  font-size: 1.2rem; /* Setting font size */
+  font-weight: bold; /* Setting font weight */
+  display: flex; /* Flex container */
+  align-self: center; /* Centering vertically */
+}
+
+/* Style for pages container */
+.Pages {
+  font-size: 1.15rem; /* Setting font size */
+  font-weight: 600; /* Setting font weight */
+  display: flex; /* Flex container */
+  align-self: center; /* Centering vertically */
+  justify-content: space-around; /* Distributing items evenly */
+}
+
+/* Style for links within pages */
+.Pages a {
+  flex: 1; /* Flexible width */
+  margin: 0 100px; /* Margin around each link */
+  color: #FFFFFF; /* Setting text color */
+}
+
+/* Style for links on hover within pages */
+.Pages a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Style for profile information container */
+.profileInfo {
+  display: flex; /* Flex container */
+  align-self: normal; /* Aligning content */
+}
+
+/* Style for username text */
+.Username {
+  flex: 1; /* Flexible width */
+  margin: 0 10px; /* Margin around username */
+  align-self: center; /* Centering vertically */
+  font-size: 1.1rem; /* Setting font size */
+}
+
+/* Style for profile image */
+.ImageProfile {
+  width: 50px; /* Setting width */
+  height: 50px; /* Setting height */
+}
+
+/* Style for self-assessment container */
+.SelfAssessment {
+  position: absolute; /* Absolute positioning */
+  top: 12%; /* Position from the top */
+  left: 2%; /* Position from the left */
+}
+
+/* Style for secondary content container */
+.content2{
+  position: absolute; /* Absolute positioning */
+  top: 20%; /* Position from the top */
+  left: -50%; /* Position from the left */
+}
+
+/* Style for heading within content */
+.content h2 {
+  position: absolute; /* Absolute positioning */
+  top: 9%; /* Position from the top */
+  left: 3.5%; /* Position from the left */
+  font-size: 0.7rem; /* Font size */
+}
+
+/* Style for button positioning */
+.PosicaoBotao {
+  position: absolute; /* Absolute positioning */
+  top: 176%; /* Position from the top */
+  left: 50%; /* Position from the left */
+  transform: translate(-50%, -50%); /* Centering button */
+
+  /* Button styles */
+  background-color: #ADD8E6; /* Light blue background */
+  color: #fff; /* White text */
+  border: 2px solid #87CEEB; /* Light blue border */
+  border-radius: 10px; /* Slightly rounded corners */
+  padding: 10px 20px; /* Padding around the button */
+  font-size: 18px; /* Font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+  transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover */
+  height: 1cm; /* Height of the button */
+}
+
+/* Style for button on hover */
+.PosicaoBotao:hover {
+  background-color: #87CEEB; /* Background color on hover */
+  transform: translate(-50%, -50%) scale(1.05); /* Slightly increasing size on hover */
+}
+
+/* Style for span elements */
+span {
+  color:#000000; /* Setting text color */
+}
+
+/* Style for h4 elements */
+h4 {
+  color: red; /* Setting text color */
+}
+
+/* General reset styles for all elements */
+* {
+  margin: 0; /* Resetting margin */
+  padding: 0; /* Resetting padding */
+  box-sizing: border-box; /* Box model includes padding and border in element's total width and height */
+  text-decoration: none; /* Removing text decoration */
+  max-width: 100%; /* Ensuring elements don't exceed parent's width */
+  max-height: 100%; /* Ensuring elements don't exceed parent's height */
+}
+
+/* Style for background image container */
+.BackImage {
+  position: absolute; /* Absolute positioning */
+  background-position-x: center; /* Centering background horizontally */
+  background-position-y: center; /* Centering background vertically */
+  width: 100%; /* Full width */
+  height: 90%; /* 90% of parent height */
+  top: 18.8%; /* Position from top */
+  left: 0.5%; /* Position from left */
+  z-index: -1; /* Behind other elements */
+}
+
+/* Style for header element */
+header {
+  height: 50px; /* Setting header height */
+}
+
+/* Style for header container */
+.Headers {
+  height: 60px; /* Setting header container height */
+  background-color: #17255a; /* Setting background color */
+  display: flex; /* Flex container */
+  flex-wrap: wrap; /* Allow wrapping */
+  justify-content: space-between; /* Distributing items evenly */
+  color: #ffffff; /* Setting text color */
+  align-self: center; /* Centering vertically */
+  padding: 6px; /* Adding padding */
+}
+
+/* Style for group color text */
+.GroupColor {
+  font-size: 1.2rem; /* Setting font size */
+  font-weight: bold; /* Setting font weight */
+  display: flex; /* Flex container */
+  align-self: center; /* Centering vertically */
+}
+
+/* Style for pages container */
+.Pages {
+  font-size: 1.15rem; /* Setting font size */
+  font-weight: 600; /* Setting font weight */
+  display: flex; /* Flex container */
+  align-self: center; /* Centering vertically */
+  justify-content: space-around; /* Distributing items evenly */
+}
+
+/* Style for links within pages */
+.Pages a {
+  flex: 1; /* Flexible width */
+  margin: 0 100px; /* Margin around each link */
+  color: #ffffff; /* Setting text color */
+}
+
+/* Style for links on hover within pages */
+.Pages a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Style for profile information container */
+.profileInfo {
+  display: flex; /* Flex container */
+  align-self: normal; /* Aligning content */
+}
+
+/* Style for username text */
+.Username {
+  flex: 1; /* Flexible width */
+  margin: 8px; /* Margin around username */
+  align-self: center; /* Centering vertically */
+  font-size: 1.1rem; /* Setting font size */
+  color: #ffffff; /* Setting text color */
+}
+
+/* Style for profile link on hover */
+.profileInfo a:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: #ffffff; /* Setting text color */
+}
+
+/* Style for profile image */
+.ImageProfile {
+  width: 40px; /* Setting width */
+  height: 40px; /* Setting height */
+}
+
+/* Style for top container */
+.top {
+  display: flex; /* Flex container */
+  align-self: center; /* Centering vertically */
+}
+
+/* Style for member photo */
+.MemberPhoto {
+  margin: 20px; /* Margin */
+  width: 150px; /* Setting width */
+  height: 150px; /* Setting height */
+  border: #17255a 5px solid; /* Border styling */
+  border-radius: 50%; /* Border radius */
+}
+
+/* Style for member name text */
+.MemberName {
+  margin-top: 10px; /* Margin from the top */
+  font-size: 1.8rem; /* Setting font size */
+  font-weight: bold; /* Setting font weight */
+}
+
+/* Style for nationality container */
+.nationality {
+  display: flex; /* Flex container */
+  align-self: center; /* Centering vertically */
+  font-weight: 600; /* Setting font weight */
+}
+
+/* Style for member information text */
+.MemberInformation {
+  margin-top: 15px; /* Margin from the top */
+  font-weight: 600; /* Setting font weight */
+}
+
+/* Style for country flag image */
+.country {
+  margin-left: 5px; /* Margin from the left */
+  width: 30px; /* Setting width */
+  height: 30px; /* Setting height */
+  display: flex; /* Flex container */
+  align-self: center; /* Centering vertically */
+}
+
+/* Style for bottom container */
+.Down {
+  display: flex; /* Flex container */
+  place-items: center; /* Centering items */
+  flex-direction: column; /* Column direction */
+}
+
+/* Style for textarea */
+textarea {
+  width: 500px; /* Setting width */
+  height: 220px; /* Setting height */
+  margin: 0 auto; /* Centering horizontally */
+  padding: 20px; /* Padding */
+  border-radius: 20px; /* Border radius */
+  resize: none; /* Disabling resize */
+  background-color: #ffffff; /* Setting background color */
+  font-family: "Red Hat Text", sans-serif; /* Setting font family */
+  color: black; /* Setting text color */
+}
+
+/* Style for group dropdown */
+.Group-dropdown {
+  color: #ffffff; /* Setting text color */
+}
+
+/* Style for color name text */
+.ColorName {
+  color: #ffffff; /* Setting text color */
+  position: absolute; /* Absolute positioning */
+  font-size: 0.5cm; /* Font size */
+  top: 2.5%; /* Position from the top */
+  left: 87%; /* Position from the left */
+  font-weight: 700; /* Setting font weight */
+  font-size: 1.0rem; /* Font size */
+  font-family: 'Red Hat Text', sans-serif; /* Setting font family */
+}
